@@ -1,0 +1,22 @@
+{
+    "name": "spoiler alert",
+    "version": "0.1",
+    "manifest_version": 2,
+    "browser_action":{
+        "default_popup":"popup.html",
+        "default_icon":"logo.png"
+    },
+    "icons":{
+        "128": "logo.png"
+    },
+    "permissions":["activeTab","background"],
+    "content_scripts": [
+        {
+            "run_at": "document_end",
+            "matches": ["https://mobile.twitter.com/*","https://www.twitter.com/*"],
+            "js": ["blur.js"],
+            "css": ["blur.css"]
+        }
+    ],
+    "web_accessible_resources": ["*.png"]
+}
